@@ -3,10 +3,11 @@ const bodyParser = require('body-parser');
 const base64 = require('base64-js');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cors = require('cors');
 
 // Middleware to parse JSON request body
 app.use(bodyParser.json());
-
+app.use(cors());
 // Helper function to process the Base64-encoded file
 const processFile = (fileB64) => {
   if (!fileB64) {
